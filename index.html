@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="googlebot" content="noindex,nofollow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Daftar ruko disewakan di Kecamatan Jonggat</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.45;color:#1f2328;background:#f5f6f8}
+#wrap{max-width:1100px;margin:0 auto;padding:14px 12px 30px}
+h1{font-size:22px;margin:0 0 6px;line-height:1.3}
+.navlink{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:8px 16px;margin:2px 0 10px;border-radius:8px;background:#1a5fb4;color:#fff;text-decoration:none;font-weight:600;font-size:16px}
+.navlink:hover{background:#174f96}
+.note{background:#fff4d6;border:1px solid #f0d58a;border-radius:10px;padding:10px 12px;font-size:16px;margin:8px 0 12px}
+.note p{margin:4px 0}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;background:#fff;border:1px solid #dde1e6;border-radius:10px;padding:10px 12px;margin-bottom:10px}
+.bar label{display:flex;flex-direction:column;gap:4px;font-size:14px;color:#4b535c;flex:1 1 180px}
+select{font:inherit;font-size:16px;min-height:44px;padding:6px 10px;border:1px solid #c9ced4;border-radius:8px;background:#fff;color:#1f2328}
+#count{font-size:16px;margin:4px 2px 10px;color:#1f2328}
+#list{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:10px}
+.card{background:#fff;border:1px solid #dde1e6;border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.card.maps{border-color:#c2185b;border-width:2px}
+.top{display:flex;justify-content:space-between;gap:8px;align-items:baseline;flex-wrap:wrap}
+.wil{font-weight:700;font-size:17px}
+.harga{font-weight:700;font-size:18px;color:#0b6b2f;white-space:nowrap}
+.judul{font-size:15px;color:#4b535c}
+dl{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;margin:2px 0 4px;font-size:16px}
+dt{color:#5b636d}
+dd{margin:0}
+.kosong{color:#8a8f96;font-style:italic}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 14px;border-radius:8px;background:#1a5fb4;color:#fff;text-decoration:none;font-weight:600;font-size:16px}
+.btn.alt{background:#fff;color:#1a5fb4;border:1px solid #1a5fb4}
+.src{font-size:13.5px;color:#5b636d}
+.badge.r123{background:#e6f4ea;color:#1e6b34}
+.badge{display:inline-block;font-size:12.5px;background:#fde4ef;color:#9c0f4a;border-radius:6px;padding:1px 7px;font-weight:600}
+footer{margin-top:16px;font-size:13.5px;color:#5b636d}
+@media (max-width:600px){
+ h1{font-size:20px}
+ #list{grid-template-columns:1fr}
+ .bar label{flex:1 1 100%}
+ .btn{flex:1 1 auto}
+}
+</style>
+</head>
+<body>
+<div id="wrap">
+ <h1>Daftar ruko disewakan di Kecamatan Jonggat, Lombok Tengah</h1>
+ <a class="navlink" href="https://MarketAnalystAnemone.github.io/jonggat/">← Lihat di peta Jonggat</a>
+ <div class="note">
+  <p><b>Data dikumpulkan 20 November 2026</b> dari Google Maps, OLX, Pinhome, 99.co, Rumah123, Dot Property, Mitula, dan hasil pencarian web. Hanya satu iklan yang lokasinya di Kecamatan Jonggat, dari grup Facebook publik.</p>
+  <p>Harga dan ketersediaan bisa sudah berubah. <b>Selalu konfirmasi ke pemilik atau agen</b> lewat iklan aslinya. Kolom yang kosong ditulis "belum ada data". Satu ruko bisa diiklankan di dua situs.</p>
+ </div>
+ <div class="bar">
+  <label>Wilayah<select id="fWil"></select></label>
+  <label>Urutkan<select id="fSort">
+   <option value="harga">Harga termurah dulu</option>
+   <option value="harga-">Harga termahal dulu</option>
+   <option value="lb-">Bangunan terluas dulu</option>
+  </select></label>
+ </div>
+ <div id="count"></div>
+ <div id="list"></div>
+ <footer>Halaman ini tidak memuat nomor kontak.</footer>
+</div>
+<script>
+(()=>{
+'use strict';
+const D={"tanggal":"2026-11-20","portal":[{"wil":"Puyung","sumber":"Facebook (grup publik)","judul":"Disewakan 1 lokal ruko 2 lantai, jalan raya depan Lapangan Puyung (arah Kantor Bupati Lombok Tengah)","harga":null,"lt":null,"lb":null,"lantai":"2","ukuran":"4,5 x 12 m (tertulis di iklan)","tgl":"2026-02-01","tag":"","url":"https://www.facebook.com/groups/1506959043142375/posts/2441968522974751/","url2":""}],"maps":[]};
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const K='<span class="kosong">belum ada data</span>';
+const rp=v=>v==null?K:'Rp '+(v/1e6).toLocaleString('id-ID',{maximumFractionDigits:1})+' juta/tahun';
+const m2=v=>v==null?K:v.toLocaleString('id-ID')+' m²';
+const wilName=w=>w;
+const ALL=D.portal.map((r,i)=>({...r,i,maps:false})).concat(D.maps.map((r,i)=>({...r,i:1000+i,maps:true})));
+const wils=[...new Set(ALL.map(r=>r.wil))].sort((a,b)=>ALL.filter(r=>r.wil===b).length-ALL.filter(r=>r.wil===a).length||a.localeCompare(b));
+$('#fWil').innerHTML=`<option value="">Semua wilayah (${ALL.length})</option>`+wils.map(w=>`<option value="${esc(w)}">${esc(wilName(w))} (${ALL.filter(r=>r.wil===w).length})</option>`).join('');
+function lantai(v){if(!v)return K;if(/belum/i.test(v))return '<span class="kosong">belum jelas</span>';return esc(v);}
+function card(r){
+ if(r.maps)return `<div class="card maps"><div class="top"><span class="wil">${esc(r.wil)}</span><span class="badge">Google Maps</span></div>
+ <div class="judul">${esc(r.nama)}</div>
+ <dl><dt>Harga</dt><dd>${K}</dd><dt>Luas tanah</dt><dd>${K}</dd><dt>Luas bangunan</dt><dd>${K}</dd></dl>
+ <div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=${r.lat},${r.lng}" target="_blank" rel="noopener noreferrer">Lihat di Google Maps</a></div>
+ <div class="src">Sumber: Google Maps (agen properti). Harga dan luas belum ada; tanyakan langsung.</div></div>`;
+ return `<div class="card"><div class="top"><span class="wil">${esc(wilName(r.wil))}</span><span class="harga">${rp(r.harga)}</span></div>
+ <div class="judul">${esc(r.judul)}</div>
+ ${r.tag==='ya'?'<div><span class="badge r123">Dekat sekolah (label dari Rumah123)</span></div>':''}
+ <dl><dt>Luas tanah</dt><dd>${m2(r.lt)}</dd><dt>Luas bangunan</dt><dd>${m2(r.lb)}</dd><dt>Lantai</dt><dd>${lantai(r.lantai)}</dd>${r.ukuran?`<dt>Ukuran</dt><dd>${esc(r.ukuran)}</dd>`:''}${r.tgl?`<dt>Tanggal iklan</dt><dd>${esc(r.tgl)}</dd>`:''}</dl>
+ <div class="btns"><a class="btn" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">Lihat iklan asli</a>${r.url2?`<a class="btn alt" href="${esc(r.url2)}" target="_blank" rel="noopener noreferrer">Iklan kedua</a>`:''}</div>
+ <div class="src">Sumber: ${esc(r.sumber)}</div></div>`;
+}
+function render(){
+ const w=$('#fWil').value,s=$('#fSort').value;
+ const a=ALL.filter(r=>!w||r.wil===w).slice();
+ const nl=(x,y,f)=>x[f]==null&&y[f]==null?0:x[f]==null?1:y[f]==null?-1:0;
+ a.sort((x,y)=>{if(s==='lb-')return nl(x,y,'lb')||(y.lb-x.lb)||((x.harga??9e12)-(y.harga??9e12));const d=nl(x,y,'harga');if(d)return d;return s==='harga-'?y.harga-x.harga:x.harga-y.harga;});
+ const nm=a.filter(r=>r.maps).length;
+ $('#count').innerHTML=`Menampilkan <b>${a.length}</b> ruko`+(w?` di ${esc(wilName(w))}`:'')+` · ${a.length-nm} dari iklan portal${nm?`, ${nm} dari Google Maps`:''}`+(s==='lb-'?' · yang belum ada data luas ditaruh di akhir':'');
+ $('#list').innerHTML=a.map(card).join('');
+}
+$('#fWil').addEventListener('change',render);$('#fSort').addEventListener('change',render);
+render();
+window.__ruko={ALL,render};
+})();
+</script>
+</body>
+</html>
